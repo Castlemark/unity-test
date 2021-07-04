@@ -39,7 +39,11 @@ public class ScreenMover : MonoBehaviour
       {
         GOGameScreen1.SetActive(false);
         GOGameScreen2.SetActive(false);
-        GOGameScreen3.SetActive(false);  
+        GOGameScreen3.SetActive(false);
+      }
+      else
+      {
+        mainScreenController.gameObject.SetActive(false);
       }
     };
 
@@ -47,6 +51,9 @@ public class ScreenMover : MonoBehaviour
     Vector2 targetAnchor = Vector2.up;
     switch (gameScreenIdx)
     {
+      case 0:
+        mainScreenController.gameObject.SetActive(true);
+        break;
       case 1:
         GOGameScreen1.SetActive(true);
         targetAnchor = Vector2.left;
@@ -65,7 +72,7 @@ public class ScreenMover : MonoBehaviour
       "MoveToScreen",
       curAnchor,
       targetAnchor,
-      1.0f,
+      0.75f,
       TweenScaleFunctions.CubicEaseInOut,
       moveToScreen,
       moveToScreenCompleted
