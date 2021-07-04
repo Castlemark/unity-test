@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System;
 
 public class MainScreenController : MonoBehaviour
 {
@@ -12,11 +12,13 @@ public class MainScreenController : MonoBehaviour
   [SerializeField] private Button BtnJuego2;
   [SerializeField] private Button BtnJuego3;
 
+  public event Action<int> GameSelected;
+
   void Awake()
   {
-    BtnJuego1.onClick.AddListener(() => { });
-    BtnJuego2.onClick.AddListener(() => { });
-    BtnJuego3.onClick.AddListener(() => { });
+    BtnJuego1.onClick.AddListener(() => { GameSelected?.Invoke(1); });
+    BtnJuego2.onClick.AddListener(() => { GameSelected?.Invoke(2); });
+    BtnJuego3.onClick.AddListener(() => { GameSelected?.Invoke(3);});
   }
 
   void Start()
