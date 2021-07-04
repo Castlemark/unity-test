@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using DigitalRuby.Tween;
 
@@ -19,6 +17,7 @@ public class SplashScreenController : MonoBehaviour
     // This will run once the tween has completed
     System.Action<ITween<Vector2>> onFillBarCompleted = (t) =>
     {
+      // When the tween has been completed, we load the main game scene
       SceneManager.LoadSceneAsync("MainScene");
     };
 
