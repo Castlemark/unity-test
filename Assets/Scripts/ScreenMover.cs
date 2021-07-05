@@ -23,15 +23,15 @@ public class ScreenMover : MonoBehaviour
   private void onGameScreenSelected(int gameScreenIdx)
   {
     System.Action<ITween<Vector2>> moveToScreen = (t) =>
-      {
-        var anchorMax = RTScreenContainer.anchorMax;
-        var anchorMin = RTScreenContainer.anchorMin;
-        anchorMax.x = t.CurrentValue.y;
-        anchorMin.x = t.CurrentValue.x;
+    {
+      var anchorMax = RTScreenContainer.anchorMax;
+      var anchorMin = RTScreenContainer.anchorMin;
+      anchorMax.x = t.CurrentValue.y;
+      anchorMin.x = t.CurrentValue.x;
 
-        RTScreenContainer.anchorMax = anchorMax;
-        RTScreenContainer.anchorMin = anchorMin;
-      };
+      RTScreenContainer.anchorMax = anchorMax;
+      RTScreenContainer.anchorMin = anchorMin;
+    };
 
     System.Action<ITween<Vector2>> moveToScreenCompleted = (t) =>
     {
