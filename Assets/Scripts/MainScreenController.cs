@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using System;
 
 public class MainScreenController : MonoBehaviour
 {
-  [SerializeField] private TextMeshProUGUI TMPTimestamp;
   [SerializeField] private Button BtnJuego1;
   [SerializeField] private Button BtnJuego2;
   [SerializeField] private Button BtnJuego3;
