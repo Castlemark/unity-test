@@ -25,7 +25,7 @@ public class TimestampText : MonoBehaviour
   // Send web request, then receive, parse and format response to show it in text
   private IEnumerator getTimestamp()
   {
-    var request = UnityWebRequest.Get("https://www.worldtimeapi.org/api/ip");
+    var request = UnityWebRequest.Get("http://worldtimeapi.org/api/ip");
     yield return request.SendWebRequest();
 
     if (request.isHttpError || request.isNetworkError)
